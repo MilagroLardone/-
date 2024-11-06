@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Portal de usuarios</h1>
+<button class="" hx-get="" hx-target="#modal">Administrar</button>
+
+<div id="photo-list">
+    {% for photo in photos %}
+         {% include "photo_item.html" %}
+    {% endfor %}
+</div>
+
+<div id="modal"></div>
+{% endblock %}

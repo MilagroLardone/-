@@ -1,4 +1,4 @@
-from flask import flask
+from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from .config import Config
@@ -6,12 +6,13 @@ from .config import Config
 db: SQLAlchemy = SQLAlchemy()
 migrate: Migrate = Migrate
 
-def crear_app() -> flask:
-    app = flask(__name__)
-    app.config.from_object(config)
+def crear_app() -> Flask:
+    app = Flask(__name__)
+    app.config.from_object(obj=Config)
 
-    db.init_app(app)
+    db.init_app(app=app)
 
-    # import ... from ...
-    # app.register_blueprint() 
+    from .routes import photo_bp
+    app.register_blueprint(blueprint=photo_bp) 
+
     return app
