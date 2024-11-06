@@ -1,0 +1,5 @@
+sqlalchemy
+flask
+flask.migrate
+pydantic
+pydantic[email]
