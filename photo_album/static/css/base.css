@@ -64,6 +64,7 @@ header h1 {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    padding: 5%;
 }
 
 .contenedorFormulario {
@@ -71,6 +72,8 @@ header h1 {
     display: flex;
     align-items: center;
     flex-direction: column;
+    border: #e8c2a0 5px solid;
+    border-radius: 5px;
 }
 
 .contenedorFormulario h5 {
@@ -90,6 +93,7 @@ header h1 {
     background-color: #CB9DF0;
     transition: ease-in-out 200ms;
     margin-bottom: 2%;
+    max-width: 50%;
 }
 
 .contenedorFormulario form button:hover {
@@ -138,4 +142,8 @@ header h1 {
     cursor: pointer;
     color: #e8c2a0;;
     background-color: #ad79d8;
+}
+
+a {
+    text-decoration: none;
 }
