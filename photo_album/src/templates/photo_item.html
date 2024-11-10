@@ -1,9 +1,11 @@
-<div id="photo-{{ photo.id }}">
-    <div>
+<div id="photo-{{ photo.id }}" class="contenedor_photo_item">
+    <div class="contenedorFoto">
+        <img src=" {{photo.image}}" alt="mi foto">
         <h5>{{ photo.title }}</h5>
         <p>{{ photo.description }}</p>
-        <img src="{{ photo.image }}" alt="">
-        <button hx-get="{{url_for('photo_bp.edit_photo_form', photo_id=photo.id)}}" hx-target="#modal">Editar</button>
-        <button hx-delete="{{url_for('photo_bp.delete_photo', photo_id=photo.id)}}" hx-target="#modal">Borrar</button>
+        <div class="contenedorBotonesItem">
+            <button hx-get="{{url_for('photo_bp.edit_photo_form', photo_id=photo.id)}}" hx-target="#modal">Editar</button>
+            <button hx-delete="{{url_for('photo_bp.delete_photo', photo_id=photo.id)}}" hx-target="#modal">Borrar</button>
+        </div>
     </div>
 </div>

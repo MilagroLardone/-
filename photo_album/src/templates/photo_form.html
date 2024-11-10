@@ -1,24 +1,32 @@
-<div>
-    <div>
+<head>
+    <link rel="stylesheet" href="../../static/css/base.css">
+</head>
+<main>
+<div class="contenedor_photo_form">
+    <div class="contenedorFormulario">
         <h5>{{"Editar Foto" if photo else "Añadir Foto"}}</h5>
-        <button type="button">&times;</button>
-    </div>
-    <div>
-        <form hx-post="{{url_for('photo_bp.create_photo') if not photo else url_for('photo_bp.update_photo', photo_id=photo.id)}}" action="">
+        <form hx-post="{{url_for('photo_bp.create_photo') if not photo else url_for('photo_bp.update_photo', photo_id=photo.id)}}">
             <div>
-                <label for="">Título</label>
+                <label for="">Título de la foto:</label>
                 <input type="text" name="title">
             </div>
             <div>
-                <label for="">Descripción</label>
+                <label for="">Descripción de la foto:</label>
                 <input type="text" name="description">
             </div>
             <div>
-                <label for="">URL de la imagen</label>
+                <label for="">URL de la foto:</label>
                 <input type="url" name="image">
             </div>
-            </div>
+            <button type="submit">{{ 'Actualizar Foto' if photo else 'Subir Foto' }}</button>
         </form>
-        </div>
-    
+    </div>
+    <div id="photo-preview" class="contenedorFotoEditar">
+        {% if photo %}
+            <p>{{ photo.title }}</p>
+            <p>{{ photo.description }}</p>
+            <img src="{{ photo.image }}" alt="Vista previa de la foto" style="max-width: 300px;">
+        {% endif %}
+    </div>
 </div>
+</main>

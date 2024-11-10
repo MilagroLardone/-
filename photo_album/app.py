@@ -1,5 +1,6 @@
 from src import crear_app, db
 from src.models import Photo
+
 app = crear_app()
 
 with app.app_context():

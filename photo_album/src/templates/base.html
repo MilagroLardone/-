@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../static/css/styles.css">
+    <title>Mi Álbum de Fotos</title>
 </head>
 <body>
-    <h1>hola html base</h1>
+    <header>
+        <img src="../../static/images/star-solid.svg" alt="estrella">
+        <h1>Mi Álbum de Fotos</h1>
+        <img src="../../static/images/star-solid.svg" alt="estrella">
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
 </body>
 </html>
