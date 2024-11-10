@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Portal de usuarios</h1>
-<button class="" hx-get="" hx-target="#modal">Administrar</button>
+<h1>Mis Fotos</h1>
+<button class="" hx-get="{{url_for('photo_bp.new_photo_form')}}" hx-target="#modal">Cargar Fotos</button>
+
+<div id="modal"></div>
 
 <div id="photo-list">
     {% for photo in photos %}
@@ -10,5 +12,4 @@
     {% endfor %}
 </div>
 
-<div id="modal"></div>
 {% endblock %}

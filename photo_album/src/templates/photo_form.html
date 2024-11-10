@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>hola formulario photo form</h2>
-</body>
-</html>
+<div>
+    <div>
+        <h5>{{"Editar Foto" if photo else "Añadir Foto"}}</h5>
+        <button type="button">&times;</button>
+    </div>
+    <div>
+        <form hx-post="{{url_for('photo_bp.create_photo') if not photo else url_for('photo_bp.update_photo', photo_id=photo.id)}}" action="">
+            <div>
+                <label for="">Título</label>
+                <input type="text" name="title">
+            </div>
+            <div>
+                <label for="">Descripción</label>
+                <input type="text" name="description">
+            </div>
+            <div>
+                <label for="">URL de la imagen</label>
+                <input type="url" name="image">
+            </div>
+            </div>
+        </form>
+        </div>
+    
+</div>
