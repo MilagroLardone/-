@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="infoIndex">
+        <h2 class="tituloIndex">Todas mis fotos</h2>
+        <button class="botonIndex"><a href="{{ url_for('photo_bp.new_photo_form') }}">Cargar Fotos</a></button>
+    </div>
+
+    {% for photo in photos %}
+        {% include "photo_item.html" %}
+    {% endfor %}
+
+{% endblock %}

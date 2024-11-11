@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="contenedor_photo_form">
+        <div class="contenedorFormulario">
+            <h5><strong>{{"Editar Foto" if photo else "Añadir Foto"}}</strong></h5>
+            <form action="{{url_for('photo_bp.create_photo') if not photo else url_for('photo_bp.update_photo', photo_id=photo.id)}}" method="POST">
+                <div>
+                    <label for=""><strong>Título de la foto:</strong></label>
+                    <input type="text" name="title" value="{{ photo.title if photo else '' }}">
+                </div>
+                <div>
+                    <label for=""><strong>Descripción de la foto:</strong></label>
+                    <input type="text" name="description" value="{{ photo.description if photo else '' }}">
+                </div>
+                <div>
+                    <label for=""><strong>URL de la foto:</strong></label>
+                    <input type="url" name="image" value="{{ photo.image if photo else '' }}">
+                </div>
+                <button type="submit">{{ 'Actualizar Foto' if photo else 'Subir Foto' }}</button>
+            </form>
+        </div>
+        <div id="photo-preview" class="contenedorFotoEditar">
+            {% if photo %}
+                {% include "photo_item.html" %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
