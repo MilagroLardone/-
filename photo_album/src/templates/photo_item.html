@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hola formulario photo item</h1>
-</body>
-</html>
+<div id="photo-{{ photo.id }}" class="contenedor_photo_item">
+    <div class="contenedorFoto">
+        <img src="{{photo.image}}" alt="mi foto">
+        <h5>{{ photo.title }}</h5>
+        <p>{{ photo.description }}</p>
+        <div class="contenedorBotonesItem">
+            <button><a href="{{ url_for('photo_bp.edit_photo_form', photo_id=photo.id) }}">Editar</a></button>
+            <button hx-delete="{{url_for('photo_bp.delete_photo', photo_id=photo.id)}}">Borrar</button>
+        </div>
+    </div>
+</div>
