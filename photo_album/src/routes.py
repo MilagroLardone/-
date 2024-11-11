@@ -13,7 +13,7 @@ def index() -> str:
     return render_template('index.html', photos=photos)
 
 
-@photo_bp.route('/SubirFoto')
+@photo_bp.route('/SubirFoto', methods=['GET'])
 def new_photo_form() -> str:
    return render_template('photo_form.html')
 

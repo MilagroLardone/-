@@ -4,7 +4,7 @@
     <div class="contenedor_photo_form">
         <div class="contenedorFormulario">
             <h5><strong>{{"Editar Foto" if photo else "Añadir Foto"}}</strong></h5>
-            <form hx-post="{{url_for('photo_bp.create_photo') if not photo else url_for('photo_bp.update_photo', photo_id=photo.id)}}">
+            <form action="{{url_for('photo_bp.create_photo') if not photo else url_for('photo_bp.update_photo', photo_id=photo.id)}}" method="POST">
                 <div>
                     <label for=""><strong>Título de la foto:</strong></label>
                     <input type="text" name="title" value="{{ photo.title if photo else '' }}">
